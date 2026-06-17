@@ -1,0 +1,3 @@
+# Added ignores from CH1:L2
+dist/
+node_modules/
