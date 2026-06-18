@@ -1,10 +1,10 @@
-function main() {
-  let name = 'Marv';
-  if (name) {
-    console.log(`Hello, ${name}!`);
-  } else {
-    console.log("Hello, world!");
-  }
+// repl.js actually refers to repl.ts
+import { startREPL } from "./repl.js";
+import { initState } from "./state.js";
+
+async function main() {
+  const dexState = initState();
+  await startREPL(dexState);
 }
 
 main();
