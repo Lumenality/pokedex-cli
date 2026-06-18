@@ -2,16 +2,7 @@
 > pokedex-cli@1.0.0 dev
 > npx tsc && node dist/main.js
 
-Pokedex > Exploring pastoria-city-area...
-Found Pokemon:
- - tentacool
- - tentacruel
- - magikarp
- - gyarados
- - remoraid
- - octillery
- - wingull
- - pelipper
- - shellos
- - gastrodon
+Pokedex > Throwing a Pokeball at squirtle...
+A roll of:49 at threshold:50 should result in a escape
+squirtle escaped!
 Pokedex > Closing the Pokedex... Goodbye!

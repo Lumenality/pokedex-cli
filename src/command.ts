@@ -3,9 +3,15 @@ import { commandExit } from "./command_exit.js";
 import { commandHelp } from "./command_help.js";
 import { commandMap, commandMapB } from "./command_map.js";
 import { commandExplore } from "./command_explore.js";
+import { commandCatch } from "./command_catch.js";
 
 export function getCommands(): Record<string, CLICommand> {
   return {
+    catch: {
+      name: 'catch',
+      description: 'Throw a pokeball at a given pokemon to try and catch them (difficulty scales with base XP)',
+      callback: commandCatch,
+    },
     explore: {
       name: 'explore',
       description: 'Lists all pokemon that can be found at a given location',
