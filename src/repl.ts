@@ -14,18 +14,20 @@ export async function startREPL(state:State) {
     const rl = state.readline;
     rl.prompt();
     rl.on("line", async (answer) => {
-        let cleanAnswer = cleanInput(answer)[0].trim();
-        if (!cleanAnswer) {
+        const cleanAnswer = cleanInput(answer);
+        const command = cleanAnswer[0];
+        const args = cleanAnswer.slice(1);
+        if (!command) {
             rl.prompt()
             return;
         } 
-        if (!commands[cleanAnswer]) {
+        if (!commands[command]) {
             console.log('Unknown command');
             rl.prompt()
             return;
         }
         try {
-            await commands[cleanAnswer].callback(state);
+            await commands[command].callback(state,...args);
         } catch (e) {
             console.log(e);
         }

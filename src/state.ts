@@ -7,7 +7,7 @@ import { PokeAPI } from './pokeapi.js';
 export type CLICommand = {
     name: string;
     description: string;
-    callback: (state: State) => Promise<void>;
+    callback: (state: State,...args: string[]) => Promise<void>;
 };
 
 export type State = {
@@ -16,6 +16,7 @@ export type State = {
     api: PokeAPI;
     nextLocationsURL: string|null;
     prevLocationsURL: string|null;
+
 };
 
 export function initState():State {
@@ -27,5 +28,6 @@ export function initState():State {
         commands:commands,
         api:api,
         nextLocationsURL:null,
-        prevLocationsURL:null};
+        prevLocationsURL:null
+    };
 }
